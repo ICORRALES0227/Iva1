@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Aside</title>
+    <link rel="stylesheet" href="Style_Aside.css">
+</head>
+<body style="background-color:powderblue;">
+ 
+ <style>
+  /* Estilos para el footer */
+  footer {
+    background-color: #333; /* Color de fondo del footer (por ejemplo, gris oscuro) */
+    color: thistle; /* Color del texto en el footer */
+    padding: 20px; /* Espaciado interno del footer */
+    text-align: center; /* Alineación del texto al centro */
+    position: relative; /* Posición relativa para alinear el contenido dentro */
+    bottom: 0; /* Alinear el footer al fondo de la página */
+    width: 100%; /* Ancho completo del footer */
+  }
+</style>   
+ <style>
+    .navbar {
+        background-color: #333;
+        overflow: hidden;
+    }
+
+    .nav-list {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    .nav-list li {
+        margin-right: 10px;
+    }
+
+    .nav-list li a {
+        color: white;
+        text-decoration: none;
+        padding: 15px;
+        display: block;
+    }
+
+    .nav-list li a:hover {
+        background-color: #555;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+</style>   
+    <header>
+        <h1 style=" font-style: italic; color:Tomato;">SAQUITOS IVA & KAY</h1><br>
+        <img src="Saquitos.jpeg" height="150px" width="150px"/>
+
+<nav class="navbar">
+    <ul class="nav-list">
+        <li><a href="#home" class="nav-button">Inicio</a></li>
+        <li><a href="#about" class="nav-button">Acerca de</a></li>
+        <li class="dropdown">
+            <a href="#" class="nav-button" onclick="toggleDropdown(event)">Productos</a>
+            <div class="dropdown-content" id="servicesDropdown">
+                <a href="BolsasReutilizables.html">Bolsas reutilizables</a>
+                <a href="Prueba_Galeria.html">Sombreros chinos</a>
+                <a href="#">Adornos artesales</a>
+            </div>
+        </li>
+        <li><a href="#contact" class="nav-button">Contacto</a></li>
+        
+    </ul>
+</nav>
+ 
+        <script>
+function toggleDropdown(event) {
+    event.preventDefault(); // Prevents the link from navigating
+
+    var dropdownContent = event.target.nextElementSibling; // Get the next sibling element
+    dropdownContent.classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+document.addEventListener("click", function(event) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    for (var i = 0; i < dropdowns.length; i++) {
+        var dropdown = dropdowns[i];
+        if (!event.target.matches('.nav-button')) {
+            dropdown.classList.remove('show');
+        }
+    }
+});
+</script>
+    </header>
+
+    <main>
+        <section id="home">
+            <h2 style="color: brown;">Bienvenido a la Página de Inicio</h2>
+            <p>Bienvenidos a nuestro sitio web donde encontrarás información de nuestra pequeña empresa o bien nuestros emprendimientos, como es la confección de bolsas, adornos artesales, venta de sombreros chinos y más.</p>
+        </section>
+
+        <aside>
+            <h3 style="color: brown;">Noticias Recientes</h3>
+            <p>Artículo interesante sobre HTML.</p>
+            <h3>Enlaces Útiles</h3>
+            <ul>
+                <li><a href="https://www.w3schools.com">W3Schools</a></li>
+                <li><a href="https://developer.mozilla.org">MDN Web Docs</a></li>
+                <li><a href="Yo emprendo.mp4">Yo emprendo</a></li>
+            </ul>
+        </aside>
+
+        <section id="about">
+            <h2 style="color: brown;">Acerca de Nosotros</h2>            
+            <p>Somos una familia con un negocio emprendedor, dedicado a la confección de bolsas reutilizables para cualquier uso que se le quiera dar.</p>
+        </section>
+
+        <section id="services">
+            <h2 style="color: brown;"> Nuestros Servicios</h2>
+            <p>Somos una pequeña empresa emprenderora, que se dedica a la creación de bolsas reutilizables, con la finalidad de proteger el medio ambiente.</p>
+        </section>
+
+        <section id="contact">
+            <h2  style="color: brown;">Contáctanos</h2>
+            <p>Información de contacto: Ivania Corrales Castro. 6054-3438, icorrales21@hotmail.com</p>
+                    </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Mi Página Web. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
